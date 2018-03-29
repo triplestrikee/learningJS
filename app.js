@@ -51,3 +51,22 @@ console.log(d);
 c = { greeting: 'nihao' }
 console.log(c);
 console.log(d);
+
+//-------------Objects, Functions and 'this'------------
+var march29 = {
+    name: 'Han',
+    log: function(){
+        this.name = 'Han is your daddy now!';
+        console.log(this);
+        var that = this;
+        function setname(newname)
+        {   
+            that.name = newname;
+            console.log(that);
+        }
+        setname('Shoot! Han is your daddy again!');
+    }
+
+};
+
+march29.log()
