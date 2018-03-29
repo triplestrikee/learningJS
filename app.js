@@ -21,3 +21,33 @@ function log(a){
 log(function(){
     console.log('hi4')
 });
+
+//---------by value VS by refernce------------
+//by value (primitives)
+var a = 3;
+var b;
+b = a;
+console.log(a);
+console.log(b);
+
+//by reference (all objects (including functions))
+var c = { greeting: "hi" };
+var d;
+d = c;
+c.greeting = 'hello'; //mutate
+
+console.log(c);
+console.log(d);
+
+function changeGreet(obj){
+    obj.greeting = "hola";
+}
+
+changeGreet(d);
+console.log(c);
+console.log(d);
+
+// equals operator sets up new memory space (new address)
+c = { greeting: 'nihao' }
+console.log(c);
+console.log(d);
