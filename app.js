@@ -52,7 +52,7 @@ c = { greeting: 'nihao' }
 console.log(c);
 console.log(d);
 
-//-------------Objects, Functions and 'this'------------
+//-----march29--------Objects, Functions and 'this'------------
 var march29 = {
     name: 'Han',
     log: function(){
@@ -66,7 +66,31 @@ var march29 = {
         }
         setname('Shoot! Han is your daddy again!');
     }
-
 };
 
 march29.log()
+
+//-----march29--------Arrays---------------------
+//Array is a collection that can hold many things inside
+var arr = new Array();
+var arr = [];
+arr = [
+    1,
+    false,
+    'this is a string :))))',
+    {
+        name:'Han',
+        address:'6588 Nelson'
+    },
+    //unlike objects(key value pair), the function do not need a namespace
+    function(name){
+        console.log('Hello ' + name);
+    }
+
+]
+//array can hold anything in JS
+arr[4](arr[3].name);
+
+
+
+
