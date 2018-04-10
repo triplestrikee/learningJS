@@ -99,7 +99,7 @@ var greeting3 = function(name){
 console.log(greeting3);
 
 //anything inside () should be a expression
-//the following syntax is valid
+//the following IIFE syntax is valid
 (function(name){
     console.log('Hellooo ' + name);
 })('Jane');
@@ -109,3 +109,21 @@ console.log(greeting3);
     console.log('Hellooo ' + name);
 }('Jane'));
 
+
+//----------------------------
+//Practice find duplicated char in a array
+var myArray = [1, 2, 3, 4, 5, 6, 8, 7];
+console.log(
+(function isRepeated(arr){
+    var len = arr.length;
+    for(var i = 0; i < len; i++)
+    {
+        var temp = arr[i];
+        for(var j = i + 1; j < len - 1; j++){
+            if(temp === arr[j]){
+                return true;
+            }
+        }
+    }
+    return false;
+})(myArray));
