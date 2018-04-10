@@ -91,6 +91,21 @@ arr = [
 //array can hold anything in JS
 arr[4](arr[3].name);
 
+//-----April 29--------Immediately Invoked Function Expressions---------------------
+// IIFE function expression
+var greeting3 = function(name){
+    return 'Hello ' + name;
+}('Joe');
+console.log(greeting3);
 
+//anything inside () should be a expression
+//the following syntax is valid
+(function(name){
+    console.log('Hellooo ' + name);
+})('Jane');
 
+//or
+(function(name){
+    console.log('Hellooo ' + name);
+}('Jane'));
 
