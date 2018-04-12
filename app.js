@@ -99,7 +99,9 @@ var greeting3 = function(name){
 console.log(greeting3);
 
 //anything inside () should be a expression
+//IIFE prevents variable collision
 //the following IIFE syntax is valid
+
 (function(name){
     console.log('Hellooo ' + name);
 })('Jane');
@@ -109,6 +111,13 @@ console.log(greeting3);
     console.log('Hellooo ' + name);
 }('Jane'));
 
+
+//How IIFE interact with global(window) object
+(function(global){
+    global.addSomethingToGlobal = 'How IIFE interact with global(window) object: addSomethingToGlobal';
+}(window))
+
+console.log(window.addSomethingToGlobal);
 
 //----------------------------
 //Practice find duplicated char in a array
@@ -126,4 +135,15 @@ console.log(
         }
     }
     return false;
-})(myArray));
+}(myArray)));
+
+
+//------------Understanding Closures-------------------
+function greetClosure(sayWhat){
+
+    return function(name){
+        console.log(sayWhat + '' + name);
+    }
+}
+
+greetClosure('Hi')('HAN')
