@@ -170,7 +170,7 @@ fs[0]();
 fs[1]();
 fs[2]();
 
-
+//logging 0 1 2, IIFE, create another exceution context to hold i
 function buildFunctions2(){
     var arr = [];
     for (var i = 0; i < 3; i++){
@@ -185,6 +185,5 @@ function buildFunctions2(){
     }
     return arr;
 }
-//logging 0 1 2, IIFE
 
 var fs = buildFunctions2();
