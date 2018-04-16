@@ -147,3 +147,44 @@ function greetClosure(sayWhat){
 }
 
 greetClosure('Hi')('HAN')
+
+//------------Closure Example-------------------
+
+function buildFunctions(){
+    var arr = [];
+    for (var i = 0; i < 3; i++){
+        arr.push(
+            
+            function(){
+                console.log(i);
+            }
+
+        )
+    }
+    return arr;
+}
+//logging 3 3 3, i = 3 by the time calling the function
+
+var fs = buildFunctions();
+fs[0]();
+fs[1]();
+fs[2]();
+
+
+function buildFunctions2(){
+    var arr = [];
+    for (var i = 0; i < 3; i++){
+        
+        arr.push(
+            
+            (function(j){
+                console.log(j);
+            }(i))
+
+        )
+    }
+    return arr;
+}
+//logging 0 1 2, IIFE
+
+var fs = buildFunctions2();
