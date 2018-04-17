@@ -13,7 +13,7 @@ var greet2 = function(){
 greet();
 greet2();
 
-//3. Passing anonymous function, functions are treat as special objects 
+//3. Passing anonymous function, functions are treat as special objects in JavaScript
 function log(a){
     console.log();
 }
@@ -188,3 +188,22 @@ function buildFunctions2(){
 
 
 var fs = buildFunctions2();
+
+
+//------------Callback Functions-------------------
+function callMeBack(callback){
+    // do some work here
+    // do some work here
+
+    callback();
+}
+
+callMeBack(function(){
+    console.log('this is your first callback function')
+})
+
+callMeBack(function(){
+    console.log('this is the second callback')
+})
+
+//------------call() apply() bind()-------------------
