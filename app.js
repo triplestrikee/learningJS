@@ -207,3 +207,54 @@ callMeBack(function(){
 })
 
 //------------call() apply() bind()-------------------
+var person = {
+    firstName: 'Han',
+    lastName: 'Shen',
+    getFullName: function(){
+        var fullName = this.firstName + ' ' + this.lastName;
+        return fullName;
+    }
+}
+
+var logName = function(language1, language2){
+    console.log('Logged: ' + this.getFullName());
+    console.log('Input args: ' + language1 + ' ' + language2);
+    console.log('--------------')
+}
+
+// logName(); will get error. Using bind method =>
+logName.bind(person)();
+//bind will create a copy of the targeted function, but not invoke that function, you need to use () to invoke.
+
+
+//call and apply will invoke the function
+//call() will take args
+logName.call(person, 'en', 'chinese')
+//apply() will take args as a array
+logName.apply(person,['chinese','en'] )
+
+//------------call() apply() bind()-------examples------------
+//function borrowing
+var person2 = {
+    firstName: 'Jane',
+    lastName: 'Coder'
+}
+
+console.log(person.getFullName.bind(person2)());
+console.log(person.getFullName.apply(person2));
+console.log(person.getFullName.call(person2));
+
+//function currying use bind() ***
+//Create a copy of a function but with some pre-set parameters(could be useful to set up default values of a function) 
+function multiply(a, b) {
+    return a*b;
+}
+
+//Here bind() is creating a copy of a original function and setting up the boundry of the original function
+//this is pointing to Function: mutiply. 2 is setting the first argument to 2, 3 os settomg tje second argument
+
+var multiplyByTwo = multiply.bind(this, 2, 3)();
+console.log(multiplyByTwo);
+
+
+
