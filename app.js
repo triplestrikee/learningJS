@@ -256,5 +256,38 @@ function multiply(a, b) {
 var multiplyByTwo = multiply.bind(this, 2, 3)();
 console.log(multiplyByTwo);
 
+//============== functional programming ===================
+function caonimabzheshiyigewozijixiedeForEach(arr){
+    var newArr = [];
+    for(var i = 0; i < arr.length; i++){
+        newArr.push(arr[i] * 2)
+    }
+    return newArr;
+}
 
+arr = [1, 2, 3];
+console.log(arr);
+console.log(caonimabzheshiyigewozijixiedeForEach(arr));
 
+// we can write any method/function to replace '*2' operator, and passing the method to the caonimabzheshiyigewozijixiedeForEach function
+function caonimabzheshiyigewozijixiedeForEach2(arr, fn){
+    var newArr = [];
+    for(var i = 0; i < arr.length; i++){
+        newArr.push(fn(arr[i]));
+    }
+    return newArr;
+}
+
+//when you call it, you write the anonymous function statement and passing as an argument
+var arr2 = caonimabzheshiyigewozijixiedeForEach2(arr, function(item){
+    // return a boolean 
+    return item > 1;
+})
+console.log(arr2);
+
+//if the 'fn' you want to pass has more than one argument, you can use bind() to preset other argument
+var checkPassLimit = function(limit, item){
+    return item > limit;
+}
+var arr3 = caonimabzheshiyigewozijixiedeForEach2(arr, checkPassLimit.bind(this, 1)); 
+console.log(arr3);
