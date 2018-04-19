@@ -285,9 +285,24 @@ var arr2 = caonimabzheshiyigewozijixiedeForEach2(arr, function(item){
 })
 console.log(arr2);
 
-//if the 'fn' you want to pass has more than one argument, you can use bind() to preset other argument
+//if the 'fn' you want to pass has more than one argument, you can use bind() to pre-set other argument
 var checkPassLimit = function(limit, item){
     return item > limit;
 }
-var arr3 = caonimabzheshiyigewozijixiedeForEach2(arr, checkPassLimit.bind(this, 1)); 
+
+var checkPassLimitSimplified = function(limiter){
+    //pre-bind() the function
+    return checkPassLimit.bind(this, limiter);
+}
+var arr3 = caonimabzheshiyigewozijixiedeForEach2(arr, checkPassLimitSimplified(1)); 
 console.log(arr3);
+
+
+//============== functional programming - more example ===================
+//using and learning underscore.js lib
+
+var arr5 = _.map(arr, function(nimab){ return nimab*100});
+console.log(arr5);
+
+var arr6 = _.filter([2,3,2,3,5,6,4,8,453,14,3514,0], function(item){ return item%2 === 1});
+console.log(arr6);
