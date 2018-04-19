@@ -306,3 +306,6 @@ console.log(arr5);
 
 var arr6 = _.filter([2,3,2,3,5,6,4,8,453,14,3514,0], function(item){ return item%2 === 1});
 console.log(arr6);
+
+
+//============== OOP JavaScript and Prototypal inheritance ===================
