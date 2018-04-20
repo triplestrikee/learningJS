@@ -308,9 +308,12 @@ var arr6 = _.filter([2,3,2,3,5,6,4,8,453,14,3514,0], function(item){ return item
 console.log(arr6);
 
 var arr8 = [];
-var arr7 = _.each([2,3,2,3,5,6,4,8,453,14,3514,0], function(item1){
-  arr8.push(item1*12);
+var arr7 = _.map([2,3,2,3,5,6,4,8,453,14,3514,0], function(item1){
+    return item1 *2;
 })
-console.log(arr8);
+console.log(arr7);
 
 //============== OOP JavaScript and Prototypal inheritance ===================
+
+//============== Reflection and extend ==================
+//NEW TO REVIEW
